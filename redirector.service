@@ -1,0 +1,13 @@
+[Unit]
+Description=Redirects traffic to a new website
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/node /var/lib/redirector/index.js
+Restart=always
+RestartSec=1
+
+[Install]
+WantedBy=multi-user.target
